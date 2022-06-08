@@ -1,6 +1,6 @@
 # Trybe
 
-Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[mim](https://www.linkedin.com/in/marcoscoutinho/)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
+Este repositório contém algumas das atividades de aprendizagem desenvolvidas por _[mim](https://www.linkedin.com/in/marcoscoutinho/)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
 
 _"A Trybe é uma escola do futuro para qualquer pessoa que queira construir uma carreira de sucesso em tecnologia."_
 
