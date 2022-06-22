@@ -9,3 +9,7 @@ console.log("Adição = " + resultado);
 resultado = a - b;
 console.log("Subtração = " + resultado);
 
+// Multiplicação
+resultado = a * b;
+console.log("Multiplicação = " + resultado);
+
