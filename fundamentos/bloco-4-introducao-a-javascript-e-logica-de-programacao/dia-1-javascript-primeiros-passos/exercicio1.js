@@ -3,4 +3,4 @@
 
 const a = 12, b = 23;
 resultado = a + b;
-console.log(resultado);
+console.log("Adição = " + resultado);
