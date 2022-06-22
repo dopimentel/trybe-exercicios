@@ -13,3 +13,11 @@ console.log("Subtração = " + resultado);
 resultado = a * b;
 console.log("Multiplicação = " + resultado);
 
+// Divisão 
+resultado = a / b;
+console.log("Divisão = " + resultado);
+
+// Módulo 
+
+resultado = a % b;
+console.log("Resto da divisão = " + resultado);
