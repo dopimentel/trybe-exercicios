@@ -12,4 +12,6 @@ let player = {
         golden: 2,
         silver: 3
     },
-};
+}
+
+console.log("A jogadora " + player.name + " tem " + player["age"] + " anos.");
