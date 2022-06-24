@@ -1,0 +1,2 @@
+O exercicio desse dia consistiu em criar um portfolio usando o GitHub Pages através de um novo [repositório](https://github.com/dopimentel/dopimentel.github.io) para isso. Foi criado um arquivo html Essa página será atualizada ao longo do curso com commits.
+[Portfolio](https://dopimentel.github.io/)
