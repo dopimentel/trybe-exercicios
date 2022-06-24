@@ -19,3 +19,4 @@ let player = {
 
 
 console.log("A jogadora " + player.name + " tem " + player["age"] + " anos.");
+console.log("A jogadora " + player.name + " foi eleita a melhor jogadora do mundo por " + player.bestInTheWorld.length + " vezes.")
