@@ -1,0 +1,23 @@
+// Exercicios de 1 ao 5 do dia 4.1 reescrito com funções
+
+
+function sum(a, b) {
+    console.log(a + b);
+}
+
+function sub(a, b) {
+    console.log(a - b);
+}
+
+function mult(a, b) {
+    console.log(a * b);
+}
+
+function div(a, b) {
+    console.log(a / b);
+}
+
+function modulo(a, b) {
+    console.log(a % b);
+}
+
