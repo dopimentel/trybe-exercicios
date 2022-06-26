@@ -1,0 +1,30 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main {
+    display: inline-block;
+    width: 200px;
+
+
+}
+aside {
+    display: inline-block;
+    height: 100px;
+}
+
+h1 {
+
+}
+.images {
+    width: 200px;
+}
+span {
+    font-style: italic;
+}
+strong {
+    font-weight: 600;
+}
+
+footer {
+    text-align: end;
+}
