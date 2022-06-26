@@ -8,3 +8,6 @@ li:hover {
 li:active {
     font-family: fantasy;
 }
+li {
+    list-style: none;
+}
