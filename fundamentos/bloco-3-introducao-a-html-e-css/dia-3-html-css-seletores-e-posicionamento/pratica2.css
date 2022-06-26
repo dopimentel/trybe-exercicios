@@ -9,6 +9,7 @@ div:nth-of-type(2){
 }
 div:nth-of-type(3){
     background-color: yellow;
+    padding: 5px;
 
 }
 div:nth-of-type(4){
@@ -16,9 +17,16 @@ div:nth-of-type(4){
 }
 div:nth-of-type(5){
     background-color: yellowgreen;
+
 }
 h3 {
     font-family: fantasy;
     font-size: 16px;
     font-weight: 600;
+}
+div:nth-of-type(2n+1) {
+    font-style: italic;
+}
+div:nth-of-type(2n) {
+    font-style: none;
 }
