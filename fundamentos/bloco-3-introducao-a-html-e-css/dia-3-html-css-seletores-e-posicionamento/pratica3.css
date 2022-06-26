@@ -1,4 +1,4 @@
-ol {
+ol li {
     background-color: yellow;
 }
 ol li:nth-child(even) {
