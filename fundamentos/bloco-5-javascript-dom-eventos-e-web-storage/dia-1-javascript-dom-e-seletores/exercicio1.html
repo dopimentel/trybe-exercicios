@@ -56,7 +56,7 @@
         */
         function changeParagraph() {
             let paragraph = document.getElementsByTagName("p")[1];
-            paragraph.innerText= "OIIIII"
+            paragraph.innerText= "ooooouuuuitufcccc dfdfdc"
         };
         changeParagraph();
 
@@ -77,13 +77,25 @@
             corrigeTitulo.innerText = "Exercício 5.1 - JavaScript"
         };
         headerTitle();
-            
 
-
-
-
+        function changeParagraphUpperCase() {
+            let paragraph = document.getElementsByTagName("p");
+            for (let paragrafo of paragraph){
+              paragrafo.innerText = paragrafo.innerText.toUpperCase();
+            }
+        };
+        changeParagraphUpperCase();
         
         
+        function exibeTagP() {
+        let tagP = document.getElementsByTagName('p');
+        for (let paragrafo of tagP){
+          console.log(paragrafo.innerText)
+        }
+        
+        }
+        exibeTagP();
+
     </script>
   </body>
 </html>
