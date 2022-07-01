@@ -77,11 +77,11 @@
 
       let elementSectionLeft = document.createElement('section');
       elementSectionLeft.className = 'left-content';
-      elementSection.appendChild(elementSectionLeft);
+      elementMain.appendChild(elementSectionLeft);
 
       let elementSectionRight = document.createElement('section');
       elementSectionRight.className = 'right-content';
-      elementSection.appendChild(elementSectionRight);
+      elementMain.appendChild(elementSectionRight);
       
       let elementImg = document.createElement('img');
       elementImg.src = "https://picsum.photos/200";
@@ -104,9 +104,11 @@
         // console.log(elementMain.appendChild(elementH3));
       };
 
+      tagTitulo.className = 'title';
 
-      
-
+      for (let index = 0; index < elementMain.children; index += 1) {
+        elementMain.children[index].className = "description";
+      };
 
       
 
