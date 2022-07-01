@@ -88,14 +88,14 @@
       elementImg.className = 'small-image';
       elementSectionLeft.appendChild(elementImg);
 
-      let elementOl = document.createElement('ol');
-      elementSectionRight.appendChild(elementOl);
+      let elementUl = document.createElement('ul');
+      elementSectionRight.appendChild(elementUl);
       let numeros = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
-      let elementLi = document.createElement('li');
-      for (let index = 0; index <numeros.length; index += 1) {
+      for (let index = 0; index < numeros.length; index += 1) {
+        let elementLi = document.createElement('li');
         elementLi.innerText = numeros[index];
-        elementOl.appendChild(elementLi);
-        // console.log(elementoLi = numeros[index]);
+        elementUl.appendChild(elementLi);
+        console.log(elementoLi = numeros[index]);
       };
 
       for ( let index = 1; index < 4; index += 1){
@@ -117,7 +117,10 @@
       rightContent.style.marginRight = 'auto';
 
       centerContent = document.getElementsByClassName('center-content')[0];
-      centerContent.style.backgroundColor = 'green'
+      centerContent.style.backgroundColor = 'green';
+
+
+      
 
 
 
