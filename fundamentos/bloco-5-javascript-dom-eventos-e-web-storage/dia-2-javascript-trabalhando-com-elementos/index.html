@@ -95,7 +95,7 @@
         let elementLi = document.createElement('li');
         elementLi.innerText = numeros[index];
         elementUl.appendChild(elementLi);
-        console.log(elementoLi = numeros[index]);
+        // console.log(elementoLi = numeros[index]);
       };
 
       for ( let index = 1; index < 4; index += 1){
@@ -119,7 +119,12 @@
       centerContent = document.getElementsByClassName('center-content')[0];
       centerContent.style.backgroundColor = 'green';
 
+      let lista = document.getElementsByTagName('li');
+      elementUl.removeChild(lista[lista.length -1]);
+      elementUl.removeChild(lista[lista.length -1]);
 
+    
+       
       
 
 
