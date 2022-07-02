@@ -30,20 +30,20 @@ function createDaysOfTheMonth () {
             let elementLi = document.createElement("li");
             elementLi.innerHTML = decemberDay;
             elementLi.className = "day";
-            elementLi.classList.add("day-holiday");
+            elementLi.classList.add("holiday");
             days.appendChild(elementLi);
         } else if (decemberDay === 4 || decemberDay === 11 || decemberDay === 18) {
             let elementLi = document.createElement("li");
             elementLi.innerHTML = decemberDay;
             elementLi.className = "day";
-            elementLi.classList.add("day-friday");
+            elementLi.classList.add("friday");
             days.appendChild(elementLi);
         } else if (decemberDay === 25) {
             let elementLi = document.createElement("li");
             elementLi.innerHTML = decemberDay;
             elementLi.className = "day";
-            elementLi.classList.add("day-holiday");
-            elementLi.classList.add("day-friday");
+            elementLi.classList.add("holiday");
+            elementLi.classList.add("friday");
             days.appendChild(elementLi);
         } else {
             let elementLi = document.createElement("li");
@@ -57,12 +57,27 @@ function createDaysOfTheMonth () {
 createDaysOfTheMonth();
 
 
+let btnHoliday = document.createElement("input");
+function createBtnHoliday() {
+    btnHoliday.type = 'button';
+    btnHoliday.value = 'Feriados';
+    btnHoliday.id = "btn-holiday";
+    let buttonsContainer = document.querySelector(".buttons-container");
+    // console.log(buttonsContainer);
+    buttonsContainer.appendChild(btnHoliday);
+};
+createBtnHoliday ();
 
-let btnHoliday = document.createElement('input');
-btnHoliday.type = 'button';
-btnHoliday.value = 'Feriados';
-btnHoliday.id = "btn-holiday";
-let buttonsContainer = document.querySelector(".buttons-container");
-// console.log(buttonsContainer);
-buttonsContainer.appendChild(btnHoliday);
+console.log(btnHoliday.value);
 
+btnHoliday.addEventListener('click', changeColorHoliday);
+function changeColorHoliday(event) {
+    let holidayList = document.getElementsByClassName('holiday')
+    for ( let holiday of holidayList) {
+        if (holiday.style.backgroundColor !== 'white') {
+            holiday.style.backgroundColor = "white";
+        } else {
+            holiday.style.backgroundColor = 'unset';
+        }       
+    }
+}
