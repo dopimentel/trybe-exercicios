@@ -80,7 +80,7 @@ function changeColorHoliday() {
         if (holiday.style.backgroundColor !== 'white') {
             holiday.style.backgroundColor = "white";
         } else {
-            holiday.style.backgroundColor = 'unset';
+            holiday.style.backgroundColor = "rgb(238, 238, 238)";
         }       
     }
 }
@@ -115,6 +115,7 @@ let monthDays = document.getElementsByClassName('day');
 for (let day of monthDays) {
 day.addEventListener('mouseover', effectZoom);
 day.addEventListener("mouseout", normal);
+day.addEventListener('click', daySelector);
 
 };
 function effectZoom(event) {
@@ -146,6 +147,31 @@ myTasks.appendChild(elementDiv);
 };
 
 createLabel('green');
+
+let task = document.getElementsByClassName('task')[0];
+task.addEventListener('click', taskSelector);
+function taskSelector(event) {
+    if (event.target.className === 'task') {
+        event.target.classList.add('selected');
+        // selected.classList.remove('selected');
+    } else {
+        event.target.className = 'task';
+    }
+    console.log(event.target.className)
+};
+
+function daySelector(event){
+    let selected = document.querySelector(".selected");
+
+    if (event.target.style.backgroundColor !== selected.style.backgroundColor) {
+        event.target.style.backgroundColor = selected.style.backgroundColor;
+
+    } else {
+        event.target.style.backgroundColor = "rgb(238, 238, 238)";
+    }
+
+
+}
 
 
 
