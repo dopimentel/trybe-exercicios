@@ -58,15 +58,15 @@ createDaysOfTheMonth();
 
 
 
-function createButton(param) {
+function createButton(param1, param2) { // recebe duas strings, param1 e param2 que são o nome da função e ID respectivamente.
     let button = document.createElement("input");
     button.type = 'button';
-    button.value = param;
-    button.id = "btn-holiday";
+    button.value = param1;
+    button.id = param2;
     let buttonsContainer = document.querySelector(".buttons-container");
     buttonsContainer.appendChild(button);
 };
-createButton('Feriados');
+createButton('Feriados', 'btn-holiday');
 
 
 
@@ -85,4 +85,4 @@ function changeColorHoliday(event) {
     }
 }
 
-createButton('Sexta-feita')
+createButton("Sexta-feita", "btn-friday");
