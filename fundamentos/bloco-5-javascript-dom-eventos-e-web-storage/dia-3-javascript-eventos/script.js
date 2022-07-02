@@ -74,7 +74,7 @@ createButton('Feriados', 'btn-holiday');
 
 let buttonHoliday = document.getElementById('btn-holiday');
 buttonHoliday.addEventListener('click', changeColorHoliday);
-function changeColorHoliday(event) {
+function changeColorHoliday() {
     let holidayList = document.getElementsByClassName('holiday')
     for ( let holiday of holidayList) {
         if (holiday.style.backgroundColor !== 'white') {
@@ -85,4 +85,41 @@ function changeColorHoliday(event) {
     }
 }
 
+
+
 createButton("Sexta-feita", "btn-friday");
+
+
+
+
+let buttonFriday = document.getElementById('btn-friday');
+buttonFriday.addEventListener('click', changeTxt);
+let days = [];
+function changeTxt() {
+    let fridayList = document.getElementsByClassName('friday');
+    if (typeof parseInt(fridayList[0].innerText) === "number" && fridayList[0].innerText !== 'SEXTOU') {
+        for (let friday of fridayList) {
+            days.push(parseInt(friday.innerText));
+            friday.innerText = 'SEXTOU';
+        }        
+    } else {
+        for (let friday of fridayList) {
+            friday.innerText = days.shift();
+        }
+    }
+
+
+}
+
+let monthDays = document.getElementsByClassName('day');
+for (let day of monthDays) {
+day.addEventListener('mouseover', effectZoom);
+function effectZoom(event) {
+    event.target.style.transform = 'scale(2)';
+}
+day.addEventListener('mouseout', normal)
+function normal(event) {
+    event.target.style.transform = 'scale(1)';
+}
+}
+
