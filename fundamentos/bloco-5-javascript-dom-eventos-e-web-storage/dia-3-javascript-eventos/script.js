@@ -57,26 +57,23 @@ function createDaysOfTheMonth () {
 createDaysOfTheMonth();
 
 
-let btnHoliday = document.createElement("input");
+
 function createButton(param) {
-    btnHoliday.type = 'button';
-    btnHoliday.value = param;
-    btnHoliday.id = "btn-holiday";
+    let button = document.createElement("input");
+    button.type = 'button';
+    button.value = param;
+    button.id = "btn-holiday";
     let buttonsContainer = document.querySelector(".buttons-container");
-    // console.log(buttonsContainer);
-    buttonsContainer.appendChild(btnHoliday);
+    buttonsContainer.appendChild(button);
 };
-createButton  ('Feriados');
-
-console.log(btnHoliday.value);
+createButton('Feriados');
 
 
 
 
 
-
-
-btnHoliday.addEventListener('click', changeColorHoliday);
+let buttonHoliday = document.getElementById('btn-holiday');
+buttonHoliday.addEventListener('click', changeColorHoliday);
 function changeColorHoliday(event) {
     let holidayList = document.getElementsByClassName('holiday')
     for ( let holiday of holidayList) {
@@ -87,3 +84,5 @@ function changeColorHoliday(event) {
         }       
     }
 }
+
+createButton('Sexta-feita')
