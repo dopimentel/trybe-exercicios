@@ -124,14 +124,29 @@ function normal(event) {
   event.target.style.transform = "scale(1)";
 }
 
+
+
 let tarefa;
 elementSpan = document.createElement('span');
 myTasks = document.querySelector(".my-tasks");
+
 function createTask (tarefa){
 elementSpan.innerText = tarefa;
 myTasks.appendChild(elementSpan);
 }
 createTask('cozinhar');
+
+
+let cor;
+function createLabel(cor) {
+elementDiv = document.createElement("div");
+elementDiv.className = 'task';
+elementDiv.style.backgroundColor = cor;
+myTasks.appendChild(elementDiv);
+};
+
+createLabel('green');
+
 
 
 
