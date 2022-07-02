@@ -114,12 +114,25 @@ function changeTxt() {
 let monthDays = document.getElementsByClassName('day');
 for (let day of monthDays) {
 day.addEventListener('mouseover', effectZoom);
+day.addEventListener("mouseout", normal);
+
+};
 function effectZoom(event) {
-    event.target.style.transform = 'scale(2)';
+  event.target.style.transform = "scale(2)";
 }
-day.addEventListener('mouseout', normal)
 function normal(event) {
-    event.target.style.transform = 'scale(1)';
+  event.target.style.transform = "scale(1)";
 }
+
+let tarefa;
+elementSpan = document.createElement('span');
+myTasks = document.querySelector(".my-tasks");
+function createTask (tarefa){
+elementSpan.innerText = tarefa;
+myTasks.appendChild(elementSpan);
 }
+createTask('cozinhar');
+
+
+
 
