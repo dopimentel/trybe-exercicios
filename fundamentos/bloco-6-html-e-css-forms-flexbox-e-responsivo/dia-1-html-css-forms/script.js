@@ -4,10 +4,17 @@ const INPUT_CHECKBOX = document.querySelector("#input-checkbox");
 const HREF_LINK = document.querySelector("#href");
 
 function brokenLink(event) {
-  event.preventDefault()
+  event.preventDefault();
 }
 HREF_LINK.addEventListener('click', brokenLink);
 
+function box(event) {
+  event.preventDefault();
+}
+INPUT_CHECKBOX.addEventListener('click', box);
 
-
+function text(event) {
+  event.preventDefault();
+}
+INPUT_TEXT.addEventListener('click', text);
 
