@@ -5,7 +5,39 @@
 </head>
 <body>
     <form action="">
-
+        <label for="name">Nome
+        <input type="name" id="name" minlength="10" maxlength="40">
+        </label>
+        <br>
+        <label for="email">E-mail        
+            <input type="email" minlength="10" maxlength="50">
+            <br>
+        </label>
+        <label for="cidade">
+            <input type="radio" name="destino" id="cidade">Cidade
+        </label>
+        <label for="campo">
+            <input type="radio" name="destino" id="campo">Campo
+        </label>
+        <label for="praia">
+            <input type="radio" name="destino" id="praia">Praia
+        </label>
+        <label for="montanha">
+            <input type="radio" name="destino" id="montanha"> Montanha
+        </label>
+        <div>
+            <label for="pitch">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip? <br>
+                <textarea name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
+            </label>
+        </div>
+        <label for="ddmmyyyy">Melhor data para a viagem
+        <input type="date" name="" id="ddmmyyyy"> <br>
+        </label>
+        <label for="news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+            <input type="checkbox" name="" id="news"></label> <br>
+        <label for="agree">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+            <input type="checkbox" name="" id="agree"></label> <br>
+        <input type="submit" value="Enviar">
     </form>
 </body>
 </html>
