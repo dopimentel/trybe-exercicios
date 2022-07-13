@@ -7,73 +7,76 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-    <form action="">
-        <h1>Participe do Sorteio</h1>
+    <div class="container-fluid bg-dark">
+        <form action="">
+            <h1 class="text-center p-4 text-white">Participe do Sorteio</h1>
 
-        <fieldset class="form-group">
-            <legend>Dados</legend>
-            <div class="form-group">
-                <label for="name">Nome
-                </label>
-                <input class="form-control" type="name" id="name" minlength="10" maxlength="40">
+
+            <div class="border rounded p-5 bg-light">
+                <fieldset class="form-group">
+                    <legend>Dados</legend>                    
+                    <div class="form-group">
+                        <label for="name">Nome Completo
+                        </label>
+                        <input class="form-control" type="name" id="name" minlength="10" maxlength="40">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail
+                        </label>
+                        <input class="form-control" type="email" minlength="10" maxlength="50">
+                    </div>
+                    <fieldset class="form-group">
+                        <legend>Destino Preferido</legend>
+                        <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" name="destino" id="cidade">
+                            <label class="custom-control-label" for="cidade">Cidade
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" name="destino" id="campo">
+                            <label class="custom-control-label" for="campo">Campo
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" name="destino" id="praia">
+                            <label class="custom-control-label" for="praia">Praia
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" name="destino" id="montanha">
+                            <label class="custom-control-label" for="montanha">Montanha
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="pitch">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?
+                        </label>
+                        <textarea class="form-control" name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ddmmyyyy">Melhor data para a viagem
+                        </label>
+                        <input type="date" name="" id="ddmmyyyy">
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-checkbox custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" name="" id="news" checked>
+                            <label class="custom-control-label" for="news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+                            </label>
+                        </div>
+                        <div class="custom-checkbox custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" name="" id="agree" checked>
+                            <label class="custom-control-label" for="agree">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-            <div class="form-group">
-                <label for="email">E-mail
-                </label>
-                <input class="form-control" type="email" minlength="10" maxlength="50">
+            <div class="form-group pt-2 pb-5">
+                <input type="submit" value="Enviar" id="btn-enviar" class="btn btn-outline">
+                <input type="reset" value="Limpar" class="btn btn-outline">
             </div>
-            <fieldset class="form-group">
-                <legend>Destino Preferido</legend>
-                <div class="custom-control custom-radio">
-                    <input class="custom-control-input" type="radio" name="destino" id="cidade">
-                    <label class="custom-control-label" for="cidade">Cidade
-                    </label>
-                </div>
-                <div class="custom-control custom-radio">
-                    <input class="custom-control-input" type="radio" name="destino" id="campo">
-                    <label class="custom-control-label" for="campo">Campo
-                    </label>
-                </div>
-                <div class="custom-control custom-radio">
-                    <input class="custom-control-input" type="radio" name="destino" id="praia">
-                    <label class="custom-control-label" for="praia">Praia
-                    </label>
-                </div>
-                <div class="custom-control custom-radio">
-                    <input class="custom-control-input" type="radio" name="destino" id="montanha">
-                    <label class="custom-control-label" for="montanha">Montanha
-                    </label>
-                </div>
-            </fieldset>
-            <div class="form-group">
-                <label for="pitch">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip? <br>
-                </label>
-                <textarea class="form-control" name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="ddmmyyyy">Melhor data para a viagem
-                </label>
-                <input type="date" name="" id="ddmmyyyy">
-            </div>
-            <div class="form-group">
-                <div class="custom-checkbox custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" name="" id="news" checked>
-                    <label class="custom-control-label" for="news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
-                    </label>
-                </div>
-                <div class="custom-checkbox custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" name="" id="agree" checked>
-                    <label class="custom-control-label" for="agree">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
-                    </label>
-                </div>
-            </div>
-        </fieldset>
-        <div class="form-group">
-            <input type="submit" value="Enviar" id="btn-enviar">
-            <input type="reset" value="Limpar">
-        </div>
-    </form>
+        </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
