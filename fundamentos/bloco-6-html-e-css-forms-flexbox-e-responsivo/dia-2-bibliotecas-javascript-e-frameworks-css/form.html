@@ -24,7 +24,7 @@
                 <input class="form-control" type="email" minlength="10" maxlength="50">
             </div>
             <fieldset class="form-group">
-                <legend>Destino preferido</legend>
+                <legend>Destino Preferido</legend>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="destino" id="cidade">
                     <label class="form-check-label" for="cidade"> Cidade
@@ -51,13 +51,15 @@
                 </label>
                 <textarea class="form-control" name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
             </div>
-            <label for="ddmmyyyy">Melhor data para a viagem
-            <input type="date" name="" id="ddmmyyyy"> <br>
-            </label>
+            <div class="form-group">
+                <label for="ddmmyyyy">Melhor data para a viagem
+                </label>
+                <input type="date" name="" id="ddmmyyyy">
+            </div>
             <label for="news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
-                <input type="checkbox" name="" id="news"></label> <br>
+                <input type="checkbox" name="" id="news"></label>
             <label for="agree">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
-                <input type="checkbox" name="" id="agree"></label> <br>
+                <input type="checkbox" name="" id="agree"></label>
         </fieldset>
         <input type="submit" value="Enviar" id="btn-enviar">
         <input type="reset" value="Limpar">
