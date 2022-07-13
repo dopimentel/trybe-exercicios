@@ -23,30 +23,33 @@
                 </label>
                 <input class="form-control" type="email" minlength="10" maxlength="50">
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="destino" id="cidade">
-                <label class="form-check-label" for="cidade"> Cidade
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="destino" id="campo">
-                <label class="form-check-label" for="campo"> Campo
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="destino" id="praia">
-                <label class="form-check-label" for="praia">Praia
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="destino" id="montanha"> Montanha
-                <label class="form-check-label" for="montanha">
-                </label>
-            </div>
-            <div>
+            <fieldset class="form-group">
+                <legend>Destino preferido</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="destino" id="cidade">
+                    <label class="form-check-label" for="cidade"> Cidade
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="destino" id="campo">
+                    <label class="form-check-label" for="campo"> Campo
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="destino" id="praia">
+                    <label class="form-check-label" for="praia">Praia
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="destino" id="montanha"> Montanha
+                    <label class="form-check-label" for="montanha">
+                    </label>
+                </div>
+            </fieldset>
+            <div class="form-group">
                 <label for="pitch">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip? <br>
-                    <textarea name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
                 </label>
+                <textarea class="form-control" name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
             </div>
             <label for="ddmmyyyy">Melhor data para a viagem
             <input type="date" name="" id="ddmmyyyy"> <br>
