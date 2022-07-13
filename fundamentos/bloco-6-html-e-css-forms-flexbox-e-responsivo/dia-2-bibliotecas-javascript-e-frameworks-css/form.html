@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
     <form action="">
         <h1>Participe do Sorteio</h1>
 
-        <fieldset>
+        <fieldset class="form-group">
             <legend>Dados</legend>
             <label for="name">Nome
             <input type="name" id="name" minlength="10" maxlength="40">
@@ -20,18 +21,26 @@
                 <input type="email" minlength="10" maxlength="50">
                 <br>
             </label>
-            <label for="cidade">
-                <input type="radio" name="destino" id="cidade">Cidade
-            </label>
-            <label for="campo">
-                <input type="radio" name="destino" id="campo">Campo
-            </label>
-            <label for="praia">
-                <input type="radio" name="destino" id="praia">Praia
-            </label>
-            <label for="montanha">
-                <input type="radio" name="destino" id="montanha"> Montanha
-            </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="destino" id="cidade">
+                <label class="form-check-label" for="cidade"> Cidade
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="destino" id="campo">
+                <label class="form-check-label" for="campo"> Campo
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="destino" id="praia">
+                <label class="form-check-label" for="praia">Praia
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="destino" id="montanha"> Montanha
+                <label class="form-check-label" for="montanha">
+                </label>
+            </div>
             <div>
                 <label for="pitch">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip? <br>
                     <textarea name="" id="pitch" cols="30" rows="10" maxlength="500"></textarea>
@@ -48,6 +57,7 @@
         <input type="submit" value="Enviar" id="btn-enviar">
         <input type="reset" value="Limpar">
     </form>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 </body>
