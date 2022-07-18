@@ -1,15 +1,15 @@
-    const testingScope = (escopo) => {
-        if (escopo === true) {
-            let ifScope = `Não devo ser utilizada fora do meu escopo (if)`;
-            ifScope = `${ifScope} ótimo, fui utilizada no escopo !`;
-            console.log(ifScope);
-        } else {
-            let elseScope = `Não devo ser utilizada fora meu escopo (else)`;
-            console.log(elseScope);
-        }
+const testingScope = (escopo) => {
+    if (escopo === true) {
+        let ifScope = `Não devo ser utilizada fora do meu escopo (if)`;
+        ifScope = `${ifScope} ótimo, fui utilizada no escopo !`;
+        console.log(ifScope);
+    } else {
+        let elseScope = `Não devo ser utilizada fora meu escopo (else)`;
+        console.log(elseScope);
     }
+}
 
-    testingScope(true);
+testingScope(true);
 
 // 🚀 Altere as variáveis para respeitarem o escopo em que foram declaradas.
 // Modifique a estrutura da função para que ela seja uma arrow function;
@@ -20,9 +20,19 @@
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-// Seu código aqui.
+const orderedArray = () => {
+    oddsAndEvens.sort(function(a,b){
+        if (a > b) {
+            return 1;
+        } else if (a < b) {
+            return -1;
+        }
+        return 0;
+    })
+    return oddsAndEvens
+}
 
-console.log(oddsAndEvens); // será necessário alterar essa linha 😉
+console.log(orderedArray(oddsAndEvens))
 
 
 // 🚀 Crie uma função que retorne um array em ordem crescente.
