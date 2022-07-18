@@ -20,8 +20,8 @@ testingScope(true);
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-const orderedArray = () => {
-    oddsAndEvens.sort(function(a,b){
+const orderedArray = (param) => {
+    param.sort(function(a,b){
         if (a > b) {
             return 1;
         } else if (a < b) {
@@ -29,9 +29,8 @@ const orderedArray = () => {
         }
         return 0;
     })
-    return oddsAndEvens
+    return param
 }
-
 console.log (`Os números ${orderedArray(oddsAndEvens)} se encontram ordenados de forma crescente!`);
 
 
