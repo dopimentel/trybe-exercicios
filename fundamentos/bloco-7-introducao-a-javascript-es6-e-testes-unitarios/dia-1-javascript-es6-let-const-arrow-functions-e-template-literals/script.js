@@ -32,7 +32,8 @@ const orderedArray = () => {
     return oddsAndEvens
 }
 
-console.log(orderedArray(oddsAndEvens))
+console.log (`Os números ${orderedArray(oddsAndEvens)} se encontram ordenados de forma crescente!`);
+
 
 
 // 🚀 Crie uma função que retorne um array em ordem crescente.
