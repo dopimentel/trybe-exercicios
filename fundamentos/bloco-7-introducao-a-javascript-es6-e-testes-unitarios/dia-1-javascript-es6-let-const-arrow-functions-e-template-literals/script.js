@@ -41,3 +41,15 @@ console.log (`Os números ${orderedArray(oddsAndEvens)} se encontram ordenados d
 // Utilize template literals para que a chamada console.log(<seu código>oddsAndEvens<seu código>); retorne a frase "Os números 2,3,4,7,10,13 se encontram ordenados de forma crescente!".
 
 
+
+const fatorial = (n) => {
+    let resultado = 1;
+    for ( let counter = 2; counter <= n; counter += 1) {
+        resultado = resultado * counter
+    } 
+    
+    return resultado
+    
+}
+console.log(fatorial(6))
+
