@@ -51,5 +51,6 @@ const fatorial = (n) => {
     return resultado
     
 }
-console.log(fatorial(6))
+console.log(fatorial(2))
+
 
