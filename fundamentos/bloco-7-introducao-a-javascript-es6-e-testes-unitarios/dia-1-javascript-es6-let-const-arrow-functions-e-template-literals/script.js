@@ -60,7 +60,7 @@ console.log(fatorial(6))
 let longestWord = (phrase) => {
     let longest = phrase.split(' ')[0].length;
     let lWord = phrase.split(' ')[0];
-    for (word of phrase.split(" ")) {
+    for (const word of phrase.split(' ')) {
         if (word.length >= longest) {
             largest = word.length;
             lWord = word
