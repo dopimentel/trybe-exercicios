@@ -5,9 +5,8 @@ const bodyElement = document.querySelector('body')
 const pElement = bodyElement.appendChild(document.createElement('p'));
 pElement.innerText =`${clickCount} click`;
 
-btn.addEventListener("click", (contador) => {
+btn.addEventListener("click", () => {
   clickCount += 1;
-  console.log(clickCount);
   let clicks = () => (clickCount > 1 ? "clicks" : "click");
   pElement.innerText = `${clickCount} ${clicks()}`;
   return clickCount;
