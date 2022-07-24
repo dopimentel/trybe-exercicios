@@ -77,3 +77,4 @@ let longestWord2 = (phrase) => {
 }
 
 console.log(longestWord2('Antônio foi no banheiro e não sabemos o que aconteceu'));
+
