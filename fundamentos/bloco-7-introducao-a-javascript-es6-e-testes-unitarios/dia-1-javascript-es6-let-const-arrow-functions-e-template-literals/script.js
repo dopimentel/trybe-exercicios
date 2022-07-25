@@ -112,3 +112,18 @@ const replace = (nome) => {
 }
 
 console.log(replace ('Joao'))
+
+
+const newString = (replace) => {
+    const skills = ['javascript', 'HTML', 'CSS'];
+    let resultado = `
+    ${replace}
+    Minhas três principais habilidades são:`
+    for (const skill of skills) {
+        resultado += `
+    - ${skill}`
+    }
+    return resultado
+}
+
+console.log(newString(replace('Marcos')))
