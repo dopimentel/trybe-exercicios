@@ -94,3 +94,17 @@ const keyCreator = (object, key, value) => {
 keyCreator(lesson2, 'turno', 'noite');
 
 console.log(lesson2);
+
+// 2 - Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
+
+
+const keySList = (object) => {
+    let list = '';
+    const keys = Object.keys(object);
+    for (const key of keys) {
+        list += `${key}\n`;
+    }
+    return list;
+} 
+console.log(keySList(lesson1))
+
