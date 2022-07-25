@@ -15,18 +15,44 @@
   <button id='button'>Somar</button>
   <p id='result'></p>
   <script>
-    function sum() {
+    const verifyIsNumber = (value1, value2) => {
+      if (isNaN(Number(value1)) || isNaN(Number(value2))) {
+        throw new Error (`Ambos os valores precisam ser números`);
+      }
+    }
+    const verifyInputs = (value1, value2) => {
+      if (!value1 && !value2) {
+        throw new Error (`Nada foi digitado`);
+      }
+      if (!value1 && value2 !== '') {
+        throw new Error (`Apenas o Valor 2 foi digitado`);
+      }
+      if (!value1 !== '' && !value2) {
+        throw new Error (`Apenas o Valor 1 foi digitado`);
+      }
+    }
+    const sum = () => {
       const value1 = document.getElementById('value1').value;
       const value2 = document.getElementById('value2').value;
-      const result = Number(value1) + Number(value2);
-      document.getElementById('result').innerHTML = `Resultado: ${result}`;
-      document.getElementById('value1').value = '';
-      document.getElementById('value2').value = '';
+      try {
+        verifyInputs(value1, value2);
+        verifyIsNumber(value1, value2);
+        const result = Number(value1) + Number(value2);
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+      } catch (erro) {
+        document.getElementById('result').innerHTML = `${erro.message}`
+
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
+      
     }
     window.onload = () => {
       const button = document.getElementById('button');
       button.addEventListener('click', sum);
     }
+
   </script>
 </body>
 </html>
