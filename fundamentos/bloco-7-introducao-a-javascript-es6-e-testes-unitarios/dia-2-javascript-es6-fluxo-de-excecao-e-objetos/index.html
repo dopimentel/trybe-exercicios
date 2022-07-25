@@ -40,7 +40,7 @@
         const result = Number(value1) + Number(value2);
         document.getElementById('result').innerHTML = `Resultado: ${result}`;
       } catch (erro) {
-        document.getElementById('result').innerHTML = `${erro.message}`
+        alert(`${erro.message}`)
 
       } finally {
         document.getElementById('value1').value = '';
