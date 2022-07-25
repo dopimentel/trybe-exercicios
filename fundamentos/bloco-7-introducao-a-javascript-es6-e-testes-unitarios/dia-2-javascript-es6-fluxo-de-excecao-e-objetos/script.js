@@ -108,3 +108,9 @@ const keySList = (object) => {
 } 
 console.log(keySList(lesson1))
 
+// 3 - Crie uma função para mostrar o tamanho de um objeto. Essa função deve receber um objeto como parâmetro.
+
+const objectSize = (object) => Object.keys(object).length
+
+console.log(objectSize(lesson1));
+
