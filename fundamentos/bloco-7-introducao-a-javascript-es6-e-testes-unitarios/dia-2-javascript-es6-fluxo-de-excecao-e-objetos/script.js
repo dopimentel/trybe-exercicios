@@ -163,15 +163,27 @@ console.log(allLessons);
 // 6 - Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
 
 
-const studentTotal = () => {
+const studentTotal = (object) => {
     let resul = 0
-    for (let index = 0; index < Object.keys(allLessons).length; index += 1) {
-        resul += allLessons[Object.keys(allLessons)[index]].numeroEstudantes;
+    for (let index = 0; index < Object.keys(object).length; index += 1) {
+        resul += object[Object.keys(object)[index]].numeroEstudantes;
     }
     return resul
 }
 
-console.log(studentTotal());
+console.log(studentTotal(allLessons));
 
 
 
+
+// 7 - Crie uma função que obtenha o valor da chave de acordo com o seu índice no objeto. Por exemplo:
+// console.log(getValueByNumber(lesson1, 0));
+// Output: 'Matématica'
+
+
+
+
+const getValueByNumber = (param1, param2) => {
+    console.log(Object.values(param1)[param2])
+}
+getValueByNumber(lesson1, 1)
