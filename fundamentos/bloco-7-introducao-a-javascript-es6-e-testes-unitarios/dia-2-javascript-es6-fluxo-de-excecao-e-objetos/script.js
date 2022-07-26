@@ -155,6 +155,17 @@ const allLessons = {};
 allLessons.lesson1 = Object.assign({}, lesson1);
 allLessons.lesson2 = Object.assign({}, lesson2);
 allLessons.lesson3 = Object.assign({}, lesson3);
-console.log(allLessons)
+console.log(allLessons);
+
+const studentTotal = () => {
+    let resul = 0
+    for (let index = 0; index < Object.keys(allLessons).length; index += 1) {
+        resul += allLessons[Object.keys(allLessons)[index]].numeroEstudantes;
+    }
+    return resul
+}
+
+console.log(studentTotal());
+
 
 
