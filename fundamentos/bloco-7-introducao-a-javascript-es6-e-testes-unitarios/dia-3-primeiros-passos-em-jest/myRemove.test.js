@@ -9,4 +9,8 @@ describe("myRemove(arr, item) receives an array and returns a copy it without 'i
       expect(myRemove([1, 2, 3, 4], 3)).not.toStrictEqual([1, 2, 3, 4]);
     });
 
+    it("myRemove([1, 2, 3, 4], 5) returns [1, 2, 3, 4]", () => {
+      expect(myRemove([1, 2, 3, 4], 5)).toStrictEqual([1, 2, 3, 4]);
+    });
+
 });
