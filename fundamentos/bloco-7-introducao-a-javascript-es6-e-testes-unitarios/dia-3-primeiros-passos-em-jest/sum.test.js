@@ -13,4 +13,8 @@ describe("The function sum(a, b) returns a plus b", () => {
       expect(() => sum(4, "5")).toThrow();
     });
 
+    it("erro message is 'parameters must be numbers' when sum (4 e '5')", () => {
+      expect(() => sum(4, "5")).toThrowError('parameters must be numbers');
+    });
+
 });
