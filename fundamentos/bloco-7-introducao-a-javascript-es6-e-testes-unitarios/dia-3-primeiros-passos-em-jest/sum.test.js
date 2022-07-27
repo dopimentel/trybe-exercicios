@@ -9,4 +9,8 @@ describe("The function sum(a, b) returns a plus b", () => {
       expect(sum(0, 0)).toBe(0);
     });
 
+    it("throws a erro when sum (4 e '5')", () => {
+      expect(() => sum(4, "5")).toThrow();
+    });
+
 });
