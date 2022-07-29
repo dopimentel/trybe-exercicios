@@ -43,3 +43,24 @@ const RIGHT_ANSWERS = ["A", "C", "B", "D", "A", "A", "D", "A", "D", "C"];
 const STUDENT_ANSWERS = ["A", "N.A", "B", "D", "A", "C", "N.A", "A", "D", "B"];
 
 
+const matcher = (arrayR, arrayW) => {
+    if (arrayR === arrayW) {
+        return 1;
+    }
+    if ((arrayR !== arrayW && arrayW !== 'N.A')) {
+        return - 0.5;
+    }
+    return 0;
+}
+
+const score = (array1, array2, callback) => {
+    let counter = 0;
+    for (let index = 0; index < array1.length; index +=1) {
+        x = callback(array1[index], array2[index]);
+        counter += x
+    }
+    return counter
+};
+
+
+console.log(score(RIGHT_ANSWERS, STUDENT_ANSWERS, matcher));
