@@ -63,10 +63,20 @@ const books = [
 
 // 2 - Retorne o nome do livro de menor nome.
 
+// const shortestNameBook = () => {
+// return books.sort((a, b) => a.name.length - b.name.length)[0].name;
+// }
+// console.log(shortestNameBook())
+
 const shortestNameBook = () => {
-return books.sort((a, b) => a.name.length - b.name.length)[0].name;
+let shortestName;
+books.forEach((element) => {
+    if (!shortestName || element.name.length < shortestName.length) {
+        shortestName = element.name
+    }
+
+})
+return shortestName
 }
 console.log(shortestNameBook())
-
-
 
