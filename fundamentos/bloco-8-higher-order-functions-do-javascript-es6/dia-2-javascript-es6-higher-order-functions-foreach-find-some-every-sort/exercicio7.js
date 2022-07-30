@@ -67,5 +67,9 @@ const books = [
 // const expectedResult = false;
 
 function authorUnique() {
-  // escreva seu código aqui
+    return books.every((book) => {
+    return !books.some((element) => (book.author.birthYear === element.author.birthYear) && (book !== element))
+    })
 }
+
+console.log(authorUnique())
