@@ -73,3 +73,7 @@ const books = [
 //   releaseYear: 1991,
 // };
 
+function getNamedBook() {
+    return books.find((element) => element.name.length === 26);
+}
+console.log(getNamedBook())
