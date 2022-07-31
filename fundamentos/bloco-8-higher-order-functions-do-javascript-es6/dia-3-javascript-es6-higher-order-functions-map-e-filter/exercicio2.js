@@ -92,13 +92,24 @@ const books = [
 // ];
 
 function nameAndAge() {
-  // escreva seu código aqui
+  return books
+    .map((book) => {
+      return {
+        age: book.releaseYear - book.author.birthYear,
+        author: book.author.name,
+      };
+    })
+    .sort((a, b) => a.age - b.age);
 }
-console.log(books.map((book) => {
-const obj = {
-  
-};
-obj.age = book.releaseYear - book.author.birthYear
-obj.author = book.author.name
-return obj;
-}))
+console.log(nameAndAge())
+
+
+// Primeiro codigo
+// console.log(
+//   books.map((book) => {
+//     const obj = {};
+//     obj.age = book.releaseYear - book.author.birthYear;
+//     obj.author = book.author.name;
+//     return obj;
+//   }).sort((a, b) => a.age - b.age)
+// );
