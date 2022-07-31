@@ -89,7 +89,7 @@ const books = [
 // ];
 
 const oldBooksOrdered = () => {
-  currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   return books.filter((book) => currentYear - book.releaseYear > 60).sort((book1, book2) => book1.releaseYear - book2.releaseYear)
 
 }
