@@ -71,12 +71,10 @@ const books = [
 function authorWith3DotsOnName() {
 return books.filter((book) => {
   return (
-    book.author.name.split("")[1] === "." &&
-    book.author.name.split("")[4] === "." &&
-    book.author.name.split("")[7] === "."
+    book.author.name[1] === "." &&
+    book.author.name[4] === "." &&
+    book.author.name[7] === "."
   );
 })[0].name
 }
 console.log(authorWith3DotsOnName())
-
-
