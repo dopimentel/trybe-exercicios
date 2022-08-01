@@ -11,6 +11,16 @@ const names = [
   "Alarucha",
 ];
 
-function containsA() {
-  // escreva seu código aqui
-}
+const containsA = (names) =>
+  names.reduce(
+    (acc, name) =>
+      (acc += name
+        .split("")
+        .reduce(
+          (acc, curr) => (curr === "A" || curr === "a" ? (acc += 1) : acc),
+          0
+        )),
+    0
+  );
+
+console.log(containsA(names))
