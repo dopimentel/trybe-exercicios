@@ -5,4 +5,4 @@ const myList = ['v', 'k', 'k'];
 
 const swapArray = ([a, b, c]) => [c, b, a];
 
-console.log(swapArray(myList))
+console.log(swapArray(myList));
