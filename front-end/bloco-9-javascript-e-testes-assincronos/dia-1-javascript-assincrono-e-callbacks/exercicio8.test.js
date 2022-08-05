@@ -4,14 +4,24 @@
 //  a função getPokemonDetails de acordo com as especificações.
 
 // Verifique se a importação do arquivo correto está sendo feita.
-const { getPokemonDetails } = require("./get-pokemon-details");
+
+const { getPokemonDetails } = require("./exercicio8");
 
 describe("A função getPokemonDetails", () => {
-  it("retorna erro quando procuramos um pokemon que não existe no banco de dados", () => {
-    // Escreva aqui seu código
+  it("retorna erro quando procuramos um pokemon que não existe no banco de dados", (done) => {
+  
+    getPokemonDetails((pokemon) => pokemon.name === 'pikachu', (erro, message) => {
+        expect(erro).toEqual(new Error("Não temos esse pokémon para você :("));
+        done();
+    })
   });
 
-  it("retorna um pokemon que existe no banco de dados", () => {
-    // Escreva aqui seu código
+  it("retorna um pokemon que existe no banco de dados", (done) => {
+    
+    getPokemonDetails((pokemon) => pokemon.name === "Squirtle", (erro, message) => {
+        expect(message).toMatch(`Olá, seu pokémon é o Squirtle, o tipo dele é Water e a habilidade principal dele é Water Gun`);
+        done()
+    });
+
   });
 });
