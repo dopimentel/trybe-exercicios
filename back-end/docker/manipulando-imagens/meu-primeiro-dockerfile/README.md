@@ -8,4 +8,8 @@
 ```
 $ docker run marcospimentel/primeira-imagem
 
+```
+
+The shell will show:
+
 Eu sou uma pessoa estudante da Trybe!
