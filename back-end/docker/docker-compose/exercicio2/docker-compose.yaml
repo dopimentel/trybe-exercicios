@@ -9,6 +9,7 @@ services:
       - 2368:2368
     depends_on:
       - db
+
     environment:
       - database_client=mysql
       - database__connection__host=db
@@ -16,10 +17,22 @@ services:
       - database__connection__password=senha
       - database__connection__database=ghost
     
+    networks: 
+      - my-network
+    
   db:
     platform: linux/x86_64
     image: mysql:5.7.40
-    restart: always 
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=senha
+    volumes:
+      - db-data:/var/lib/mysql
+    networks: 
+      - my-network
 
+volumes:
+  db-data:
+
+networks:
+  my-network:
