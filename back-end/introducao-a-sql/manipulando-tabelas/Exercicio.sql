@@ -19,4 +19,11 @@ UPDATE pixar.movies
 SET title = 'Ratatouille', year = 2007
 WHERE id = 3;
 
+DESCRIBE pixar.box_office;
+
+INSERT INTO pixar.box_office (movie_id, rating, domestic_sales, international_sales)
+VALUES (8, 8.5, 300000000, 250000000),
+(10, 7.4, 460000000, 510000000),
+(11, 9.9, 290000000, 280000000)
+;
 
