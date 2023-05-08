@@ -33,3 +33,10 @@ WHERE movie_id = 11;
 DELETE FROM pixar.movies
 WHERE title = 'WALL-E'
 ;
+
+SELECT id FROM pixar.movies
+WHERE director = 'Andrew Stanton'; 
+DELETE FROM pixar.box_office
+WHERE movie_id IN (2, 9);
+DELETE FROM pixar.movies
+WHERE director = 'Andrew Stanton';
