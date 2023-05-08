@@ -15,3 +15,8 @@ UPDATE pixar.movies
 SET director = 'Andrew Stanton'
 WHERE title = 'Procurando Nemo';
 
+UPDATE pixar.movies
+SET title = 'Ratatouille', year = 2007
+WHERE id = 3;
+
+
