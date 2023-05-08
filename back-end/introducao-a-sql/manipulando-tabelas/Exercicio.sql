@@ -27,3 +27,9 @@ VALUES (8, 8.5, 300000000, 250000000),
 (11, 9.9, 290000000, 280000000)
 ;
 
+DELETE FROM pixar.box_office
+WHERE movie_id = 11;
+
+DELETE FROM pixar.movies
+WHERE title = 'WALL-E'
+;
