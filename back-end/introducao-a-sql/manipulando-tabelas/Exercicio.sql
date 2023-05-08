@@ -10,3 +10,8 @@ DESCRIBE box_office;
 INSERT INTO pixar.box_office (movie_id, rating, domestic_sales, internationa_sales)
 VALUES(9, 6.8, 450000000, 370000000);
 
+SET SQL_SAFE_UPDATES = 0;
+UPDATE pixar.movies
+SET director = 'Andrew Stanton'
+WHERE title = 'Procurando Nemo';
+
