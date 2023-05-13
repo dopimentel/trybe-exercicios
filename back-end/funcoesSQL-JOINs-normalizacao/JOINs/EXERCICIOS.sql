@@ -19,4 +19,8 @@ LEFT JOiN pixar.movies AS m
 ON t.id = m.theater_id
 ORDER BY t.name;
 
+SELECT * FROM pixar.theater as t
+RIGHT JOiN pixar.movies AS m
+ON t.id = m.theater_id
+ORDER BY t.name;
 
