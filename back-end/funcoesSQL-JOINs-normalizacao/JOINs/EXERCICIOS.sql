@@ -13,3 +13,10 @@ INNER JOiN pixar.box_office AS bo
 ON m.id = bo.movie_id
 ORDER BY rating DESC;
 
+
+SELECT * FROM pixar.theater as t
+LEFT JOiN pixar.movies AS m
+ON t.id = m.theater_id
+ORDER BY t.name;
+
+
