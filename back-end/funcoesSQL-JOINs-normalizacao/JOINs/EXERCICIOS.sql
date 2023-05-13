@@ -24,3 +24,12 @@ RIGHT JOiN pixar.movies AS m
 ON t.id = m.theater_id
 ORDER BY t.name;
 
+
+SELECT * FROM pixar.movies as m
+INNER JOiN pixar.theater AS t
+ON m.theater_id = t.id
+INNER JOIN pixar.box_office AS bo
+ON bo.movie_id = m.id
+WHERE bo.rating > 8
+AND m.theater_id IS NOT NULL;
+
