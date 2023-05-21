@@ -23,17 +23,12 @@ const findCharacterById = async (inputIdInNumberOrString) => {
 const removeCharacterById = async (...ids) => {
   const data = await readAll();
 
-  const filteredData = data.filter(({ id }) => {
-    return !ids.includes(Number(id));
-  });
+  const filteredData = data.filter(({ id }) => !ids.includes(Number(id)));
 
   // const filteredData = data.reduce((acc, cur) => {
-  //   const idWasFinded = ids.some((id) => Number(cur.id) === id);
-  //   console.log(idWasFinded)
-  //   if (idWasFinded) {
-  //     return acc
-  //   }
-  //   return [...acc, cur]
+  //   const idWasFinded = ids.some((id) => cur.id == id);
+    // console.log(idWasFinded)
+  //   return idWasFinded ? acc : [...acc, cur]
   // }, [])
 
   const filteredDataJson = JSON.stringify(filteredData);
