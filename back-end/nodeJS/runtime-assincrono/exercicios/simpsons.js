@@ -38,6 +38,7 @@ const removeCharacterById = async (...ids) => {
 
   const filteredDataJson = JSON.stringify(filteredData);
   console.log(filteredDataJson);
+  await fs.writeFile('./simpsons.json', filteredDataJson);
 }
 
 
@@ -57,7 +58,7 @@ const main = async () => {
     console.error(error.message);
   };
 
-  removeCharacterById(3, 4, 6, 100);
+  removeCharacterById(10, 6);
 
 
 };
