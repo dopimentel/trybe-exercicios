@@ -57,6 +57,20 @@ const addFamilyMember = async (name) => {
   await fs.writeFile('./simpsonFamily.json', newFamilyJson);
 }
 
+const replaceNelson = async () => {
+  const data = await readAll('./simpsonFamily.json', 'utf-8');
+  const filteredData = data.filter(({ id }) => id !== '5')
+  const newFamily = [ ...filteredData,
+    {
+    id: '6',
+    name: 'Maggie Simpson'
+    }
+  ];
+  console.log(newFamily);
+  const newFamilyJson = JSON.stringify(newFamily);
+  await fs.writeFile('./simpsonFamily.json', newFamilyJson);
+}
+
 
 const main = async () => {
   const data = await readAll('./simpsons.json', 'utf-8');
@@ -79,6 +93,8 @@ const main = async () => {
   simpsonFamily(1, 2, 3, 4);
 
   addFamilyMember('Nelson Muntz');
+
+  replaceNelson();
 
 };
 
