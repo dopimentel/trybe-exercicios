@@ -1,3 +1,3 @@
-const bmi = (weight, height) => weight / (height ** 2);
-console.log(bmi(64, 1.73));
+const bmi = (weightInKg, heightInCm) => weightInKg / ((heightInCm/100) ** 2);
+console.log(bmi(64, 173));
 module.exports = bmi;
