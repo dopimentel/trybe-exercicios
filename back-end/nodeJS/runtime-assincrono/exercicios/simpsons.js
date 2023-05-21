@@ -32,7 +32,6 @@ const removeCharacterById = async (...ids) => {
   // }, [])
 
   const filteredDataJson = JSON.stringify(filteredData);
-  console.log(filteredDataJson);
   await fs.writeFile('./simpsons.json', filteredDataJson);
 };
 
@@ -40,20 +39,18 @@ const simpsonFamily = async (...ids) => {
   const data = await readAll('./simpsons.json', 'utf-8');
   const filteredData = data.filter(({ id }) => ids.includes(Number(id)));
   const filteredDataJson = JSON.stringify(filteredData);
-  console.log(filteredDataJson)
   await fs.writeFile('./simpsonFamily.json', filteredDataJson);
 };
 
 
 const addFamilyMember = async (name) => {
   const data = await readAll('./simpsonFamily.json', 'utf-8');
-  console.log(data)
   const newFamily =  [...data, {
     id: String(data.length + 1),
     name
-  }]
+    }
+  ]
   const newFamilyJson = JSON.stringify(newFamily);
-  console.log(newFamilyJson);
   await fs.writeFile('./simpsonFamily.json', newFamilyJson);
 }
 
@@ -66,7 +63,6 @@ const replaceNelson = async () => {
     name: 'Maggie Simpson'
     }
   ];
-  console.log(newFamily);
   const newFamilyJson = JSON.stringify(newFamily);
   await fs.writeFile('./simpsonFamily.json', newFamilyJson);
 }
@@ -88,13 +84,13 @@ const main = async () => {
     console.error(error.message);
   };
 
-  // removeCharacterById(10, 6);
+  await simpsonFamily(1, 2, 3, 4);
 
-  simpsonFamily(1, 2, 3, 4);
+  await addFamilyMember('Nelson Muntz');
 
-  addFamilyMember('Nelson Muntz');
+  await replaceNelson();
 
-  replaceNelson();
+  await removeCharacterById(10, 6);
 
 };
 
