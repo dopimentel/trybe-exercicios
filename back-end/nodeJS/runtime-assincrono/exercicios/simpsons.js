@@ -20,6 +20,27 @@ const findCharacterById = async (inputIdInNumberOrString) => {
   return promise;
 }
 
+const removeCharacterById = async (...ids) => {
+  const data = await readAll();
+
+  const filteredData = data.filter(({ id }) => {
+    return !ids.includes(Number(id));
+  });
+
+  // const filteredData = data.reduce((acc, cur) => {
+  //   const idWasFinded = ids.some((id) => Number(cur.id) === id);
+  //   console.log(idWasFinded)
+  //   if (idWasFinded) {
+  //     return acc
+  //   }
+  //   return [...acc, cur]
+  // }, [])
+
+  const filteredDataJson = JSON.stringify(filteredData);
+  console.log(filteredDataJson);
+}
+
+
 const main = async () => {
   const data = await readAll();
   // console.log(data)
@@ -35,6 +56,9 @@ const main = async () => {
   } catch (error) {
     console.error(error.message);
   };
+
+  removeCharacterById(3, 4, 6, 100);
+
 
 };
 
