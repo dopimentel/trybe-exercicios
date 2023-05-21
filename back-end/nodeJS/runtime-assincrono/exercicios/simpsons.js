@@ -36,6 +36,11 @@ const removeCharacterById = async (...ids) => {
   await fs.writeFile('./simpsons.json', filteredDataJson);
 }
 
+const simpsonFamily = async (...ids) => {
+  const data = await readAll();
+  const filteredData = data.filter(({ id }) => ids.includes(Number(id)));
+  console.log(filteredData)
+}
 
 const main = async () => {
   const data = await readAll();
@@ -53,8 +58,9 @@ const main = async () => {
     console.error(error.message);
   };
 
-  removeCharacterById(10, 6);
+  // removeCharacterById(10, 6);
 
+  simpsonFamily();
 
 };
 
