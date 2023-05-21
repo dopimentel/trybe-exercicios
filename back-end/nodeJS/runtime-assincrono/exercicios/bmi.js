@@ -27,7 +27,10 @@ const BMI_MAX_AND_MIN = {
   },
 };
 
-const handleBMI = (weightInKg, heightInCm) => weightInKg / (heightInCm / 100) ** 2;
+const handleBMI = (weightInKg, heightInCm) => {
+  console.log(`Typed Weight in KG: ${weightInKg}. Typed Height in cm: ${heightInCm}`)
+  return weightInKg / (heightInCm / 100) ** 2
+};
 
 const categoryBMI = (bmi) => {
   const categories = Object.keys(BMI_MAX_AND_MIN);
@@ -39,11 +42,11 @@ const categoryBMI = (bmi) => {
 }
 
 const main = () => {
-  const weightInKg = readline.questionFloat('What’s your weight?');
-  const heightInCm = readline.questionInt('What’s your height?');
+  const weightInKg = readline.questionFloat('What’s your weight(KG)?');
+  const heightInCm = readline.questionInt('What’s your height(cm)?');
   const bmi = handleBMI(weightInKg, heightInCm);
   const category = categoryBMI(bmi);
-  console.log(`Your BMI is ${bmi}. You are in ${category} category`);
+  console.log(`Your BMI is ${bmi.toFixed(2)}. You are in ${category} category`);
 }
 main();
 
