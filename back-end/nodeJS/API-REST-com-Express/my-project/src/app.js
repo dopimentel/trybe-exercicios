@@ -25,6 +25,20 @@ const updateMovies = async (filePath, data) => {
   }
 };
 
+app.get('/movies/search', async (req, res) => {
+  try {
+    const { q } = req.query;
+    const movies = await readAll(MOVIES_PATH, ENCODING);
+    if (q) {
+      const filteredMovies = movies
+        .filter(({ movie }) => movie.toLowerCase().includes(q.toLowerCase()));
+      return res.status(200).json(filteredMovies);
+    }
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+});
+
 app.get('/movies/:id', async (req, res) => {
   try {
     const { id } = req.params;
