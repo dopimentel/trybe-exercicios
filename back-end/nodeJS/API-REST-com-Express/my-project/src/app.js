@@ -26,9 +26,15 @@ const readAll = async (path, encoding) => {
 
 app.get('/movies/:id', async (req, res) => {
   const { id } = req.params;
-  const movies = await readAll(MOVIES_PATH, ENCODING);
-  const movie = movies.find(({ id: movieId }) => movieId === Number(id));
-  return res.status(200).json(movie);
+  try {
+    const movies = await readAll(MOVIES_PATH, ENCODING);
+    const movie = movies.find(({ id: movieId }) => movieId === Number(id));
+    return movie
+      ? res.status(200).json(movie)
+      : res.status(404).json({ message: 'filme não encontrado' });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
 });
 
 module.exports = app;
