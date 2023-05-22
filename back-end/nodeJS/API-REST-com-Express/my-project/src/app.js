@@ -75,4 +75,23 @@ app.post('/movies/', async (req, res) => {
   }
 });
 
+app.put('/movies/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { movie, price } = req.body;
+    const movies = await readAll(MOVIES_PATH, ENCODING);
+    const movieToUpdate = movies.find(({ id: movieId }) => movieId === Number(id));
+    if (movieToUpdate) {
+      movieToUpdate.movie = movie || movieToUpdate.movie;
+      movieToUpdate.price = price || movieToUpdate.price;
+      await updateMovies(MOVIES_PATH, movies);
+      return res.status(200).json(movieToUpdate)
+    }
+    return res.status(404).json({ message: 'filme não encontrado' });
+
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+})
+
 module.exports = app;
