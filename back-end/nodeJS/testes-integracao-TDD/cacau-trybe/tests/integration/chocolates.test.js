@@ -145,4 +145,21 @@ describe('Testando a API Cacau Trybe', function () {
       expect(response.body).to.deep.equal([]);
     });
   });
+
+  describe('Usando o método PUT em /chocolates/:id para atualizar o chocolate com id 1',
+  function () {
+    it('/PUT - Deve retornar status 200 e o chocolate de id 1 atualizado', async () => {
+      const response = await chai
+        .request(app)
+        .put('/chocolates/1')
+        .send(
+          { 
+          name: 'Mint Pretty Good',
+          brandId: 2,
+          },
+          );
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({ id: 1, name: 'Mint Pretty Good', brandId: 2 });
+    });
+  });
 });

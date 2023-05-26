@@ -13,7 +13,6 @@ app.listen(3001, () => {
 app.get('/chocolates/search', async (req, res) => {
   const { name } = req.query;
   const chocolates = await filterChocolatesByName(name);
-  console.log(typeof chocolates);
   res.status(!chocolates.length ? 404 : 200).json(chocolates);
 });
 
