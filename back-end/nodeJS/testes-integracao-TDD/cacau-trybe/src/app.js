@@ -1,11 +1,20 @@
 const express = require('express');
-const { getAllChocolates, getChocolateById, getChocolatesByBrand } = require('./cacauTrybe');
+const { 
+  getAllChocolates, getChocolateById, getChocolatesByBrand, filterChocolatesByName,
+ } = require('./cacauTrybe');
 
 const app = express();
 app.use(express.json());
 
 app.listen(3001, () => {
   console.log('App listening on port 3001!');
+});
+
+app.get('/chocolates/search', async (req, res) => {
+  const { name } = req.query;
+  const chocolates = await filterChocolatesByName(name);
+  console.log(typeof chocolates);
+  res.status(!chocolates.length ? 404 : 200).json(chocolates);
 });
 
 app.get('/chocolates', async (req, res) => {
