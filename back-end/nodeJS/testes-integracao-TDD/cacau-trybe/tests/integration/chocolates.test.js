@@ -154,12 +154,26 @@ describe('Testando a API Cacau Trybe', function () {
         .put('/chocolates/1')
         .send(
           { 
+          // eslint-disable-next-line sonarjs/no-duplicate-string
           name: 'Mint Pretty Good',
           brandId: 2,
           },
           );
       expect(response.status).to.be.equal(200);
       expect(response.body).to.deep.equal({ id: 1, name: 'Mint Pretty Good', brandId: 2 });
+    });
+    it('/PUT - Deve retornar status 404 e a mensagem "Chocolate not found"', async () => {
+      const response = await chai
+        .request(app)
+        .put('/chocolates/99')
+        .send(
+          { 
+          name: 'Mint Pretty Good',
+          brandId: 2,
+          },
+          );
+      expect(response.status).to.be.equal(404);
+      expect(response.body).to.deep.equal({ message: 'Chocolate not found' });
     });
   });
 });
