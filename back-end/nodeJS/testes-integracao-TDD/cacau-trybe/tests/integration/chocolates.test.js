@@ -82,7 +82,7 @@ describe('Testando a API Cacau Trybe', function () {
         .get('/chocolates/99');
 
       expect(response.status).to.be.equal(404);
-      expect(response.body).to.deep.equal({ message: 'Chocolate not found' })
+      expect(response.body).to.deep.equal({ message: 'Chocolate not found' });
     });
   });
 
