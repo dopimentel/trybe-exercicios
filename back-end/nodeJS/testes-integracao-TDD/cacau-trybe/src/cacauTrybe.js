@@ -34,12 +34,12 @@ const filterChocolatesByName = async (query) => {
     .includes(query.toLowerCase()));
 };
 
-const updateCacauTrybeFileById = async (id, newChocolate) => {
+const updateCacauTrybeFile = async (id, newChocolate) => {
   const cacauTrybe = await readCacauTrybeFile();
   const index = cacauTrybe.chocolates.findIndex((chocolate) => chocolate.id === id);
   if (index === -1) return false;
   cacauTrybe.chocolates[index] = newChocolate;
-  await fs.writeFile(join(__dirname, '/files/cacauTrybeFile.json'), JSON.stringify(cacauTrybe));
+  await fs.writeFile(join(__dirname, '/files/cacauTrybeFile.json'), JSON.stringify(cacauTrybe, null, 2));
   return true;
 };
 
@@ -48,5 +48,5 @@ module.exports = {
     getChocolateById,
     getChocolatesByBrand,
     filterChocolatesByName,
-    updateCacauTrybeFileById,
+    updateCacauTrybeFile,
 };
