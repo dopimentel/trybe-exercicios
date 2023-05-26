@@ -107,4 +107,17 @@ describe('Testando a API Cacau Trybe', function () {
       ]);
     });
   });
+
+  describe('Usando o método GET em /chocolates/total retorna a quantidade total de chocolates', function () {
+    it('Retorna status 200 com a chave totalChocolates', async function () {
+      const response = await chai
+        .request(app)
+        .get('/chocolates/total');
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({ totalChocolates: mockFile.length });
+    });
+  });
+
+
 });
