@@ -108,14 +108,43 @@ describe('Testando a API Cacau Trybe', function () {
     });
   });
 
-  describe('Usando o método GET em /chocolates/total retorna a quantidade total de chocolates', function () {
+  describe('Usando o método GET em /chocolates/total retorna a quantidade total de chocolates',
+  function () {
     it('Retorna status 200 com a chave totalChocolates', async function () {
       const response = await chai
         .request(app)
         .get('/chocolates/total');
 
       expect(response.status).to.be.equal(200);
-      expect(response.body).to.deep.equal({ totalChocolates: JSON.parse(mockFile).chocolates.length });
+      expect(response.body).to.deep.equal({ totalChocolates: JSON
+        .parse(mockFile).chocolates.length });
+    });
+  });
+
+  describe('Usando o método GET em /chocolates/search retorna os chocolates filtrados',
+  function () {
+    it('Caso pesquise por Mo retorna status 200 com a lista filtrada correspondente', async function () {
+      const output = [
+        { id: 1, name: 'Mint Intense', brandId: 1 },
+        { id: 2, name: 'White Coconut', brandId: 1 },
+        { id: 3, name: 'Mon Chéri', brandId: 2 },
+        { id: 4, name: 'Mounds', brandId: 3 },
+      ];
+      const response = await chai
+        .request(app)
+        .get('/chocolates/search?name=Mo');
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal(output);
+    });
+
+    it('Caso pesquise por ZZZ retorna status 404 com a lista vazia', async function () {
+      const response = await chai
+        .request(app)
+        .get('/chocolates/search?name=ZZZ');
+
+      expect(response.status).to.be.equal(404);
+      expect(response.body).to.deep.equal([]);
     });
   });
 });
