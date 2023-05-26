@@ -115,9 +115,7 @@ describe('Testando a API Cacau Trybe', function () {
         .get('/chocolates/total');
 
       expect(response.status).to.be.equal(200);
-      expect(response.body).to.deep.equal({ totalChocolates: mockFile.length });
+      expect(response.body).to.deep.equal({ totalChocolates: JSON.parse(mockFile).chocolates.length });
     });
   });
-
-
 });
