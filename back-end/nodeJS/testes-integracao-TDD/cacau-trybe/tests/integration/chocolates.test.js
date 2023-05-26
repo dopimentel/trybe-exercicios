@@ -123,17 +123,18 @@ describe('Testando a API Cacau Trybe', function () {
 
   describe('Usando o método GET em /chocolates/search retorna os chocolates filtrados',
   function () {
-    it('Caso pesquise por Mo retorna status 200 com a lista filtrada correspondente', async function () {
-      const output = [
-        { id: 3, name: 'Mon Chéri', brandId: 2 },
-        { id: 4, name: 'Mounds', brandId: 3 },
-      ];
-      const response = await chai
-        .request(app)
-        .get('/chocolates/search?name=Mo');
+    it('Caso pesquise por Mo retorna status 200 com a lista filtrada correspondente', 
+      async function () {
+        const output = [
+          { id: 3, name: 'Mon Chéri', brandId: 2 },
+          { id: 4, name: 'Mounds', brandId: 3 },
+        ];
+        const response = await chai
+          .request(app)
+          .get('/chocolates/search?name=Mo');
 
-      expect(response.status).to.be.equal(200);
-      expect(response.body).to.deep.equal(output);
+        expect(response.status).to.be.equal(200);
+        expect(response.body).to.deep.equal(output);
     });
 
     it('Caso pesquise por ZZZ retorna status 404 com a lista vazia', async function () {

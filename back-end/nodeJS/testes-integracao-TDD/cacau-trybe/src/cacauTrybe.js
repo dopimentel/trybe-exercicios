@@ -39,7 +39,8 @@ const updateCacauTrybeFile = async (id, newChocolate) => {
   const index = cacauTrybe.chocolates.findIndex((chocolate) => chocolate.id === id);
   if (index === -1) return false;
   cacauTrybe.chocolates[index] = newChocolate;
-  await fs.writeFile(join(__dirname, '/files/cacauTrybeFile.json'), JSON.stringify(cacauTrybe, null, 2));
+  await fs.writeFile(join(__dirname, '/files/cacauTrybeFile.json'), JSON
+    .stringify(cacauTrybe, null, 2));
   return true;
 };
 
