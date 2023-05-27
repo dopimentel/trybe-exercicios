@@ -11,7 +11,7 @@ let nextId = 3;
 
 app.use(express.json());
 
-// app.use(apiCredentials); 
+app.use(apiCredentials); 
 
 
 app.get('/teams', (req, res) => res.json(teams));
@@ -24,6 +24,13 @@ app.get('/teams/:id', existingId, (req, res) => {
 
 
 app.post('/teams', validateTeam, (req, res) => {
+  const hasPermission = req.teams.teams.includes(req.body.sigla)
+  if (
+    !hasPermission
+    || teams.some((t) => t.sigla === req.body.sigla)
+  ) {
+    return res.status(422).json({ message: !hasPermission ? 'Sem Permissão' : 'Já existe um time com essa sigla'});
+  }
   const team = { id: nextId, ...req.body };
   teams.push(team);
   nextId += 1;
