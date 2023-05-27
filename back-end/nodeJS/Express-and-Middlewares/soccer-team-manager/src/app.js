@@ -19,9 +19,19 @@ const validateTeam = (req, res, next) => {
   }
 };
 
+const existingId = (req, res, next) => {
+  const id = Number(req.params.id);
+  const team = teams.find(t => t.id === id);
+  if (team) {
+    next();
+  } else {
+    res.sendStatus(404);
+  }
+};
+
 app.get('/teams', (req, res) => res.json(teams));
 
-app.get('/teams/:id', (req, res) => {
+app.get('/teams/:id', existingId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
@@ -39,7 +49,7 @@ app.post('/teams', validateTeam, (req, res) => {
   res.status(201).json(team);
 });
 
-app.put('/teams/:id', validateTeam, (req, res) => {
+app.put('/teams/:id', existingId, validateTeam, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
