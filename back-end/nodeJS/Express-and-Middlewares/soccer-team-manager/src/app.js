@@ -5,15 +5,17 @@ const teams = require('./utils/teams');
 const apiCredentials = require('./middlewares/apiCredentials');
 require('express-async-errors'); 
 const morgan = require('morgan');
+const cors = require('cors');
+
 
 let nextId = 3;
 
 const app = express();
+
 app.use(morgan('dev'));
-
-
 app.use(express.json());
-
+app.use('/static', express.static('./src/images'));
+app.use(cors());
 app.use(apiCredentials); 
 
 
