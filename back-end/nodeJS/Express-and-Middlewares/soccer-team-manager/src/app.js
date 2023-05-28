@@ -4,10 +4,13 @@ const existingId = require('./middlewares/existingId')
 const teams = require('./utils/teams');
 const apiCredentials = require('./middlewares/apiCredentials');
 require('express-async-errors'); 
-
-const app = express();
+const morgan = require('morgan');
 
 let nextId = 3;
+
+const app = express();
+app.use(morgan('dev'));
+
 
 app.use(express.json());
 
