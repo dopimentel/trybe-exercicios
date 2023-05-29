@@ -1,6 +1,5 @@
 const generateToken = require("../utils/generateToken");
-
-const signupRouter = express.Router();
+const signupRouter = require('express').Router();
 
 signupRouter.post('/', (req, res) => {
   const { email, password, firstName, phone } = req.body;
