@@ -7,7 +7,8 @@ const descriptionValidation = (descriptionValue, res, value) => {
 };
 
 module.exports = (req, res, next) => {
-  const { description: { createdAt, rating, difficulty} } = req.body;
+  const { description } = req.body;
+  const { createdAt, rating, difficulty } = description;
 
   return descriptionValidation(description, res, 'description')
     || descriptionValidation(createdAt, res, 'createdAt')
