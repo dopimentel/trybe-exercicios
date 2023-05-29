@@ -9,6 +9,6 @@ module.exports = async function apiCredentials(req, res, next) {
     req.teams = authorized[token];
     next(); 
   } else {
-    res.sendStatus(401);
+    next({ status: 401, message: 'Invalid token' });
   }
 };
