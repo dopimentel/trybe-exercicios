@@ -40,8 +40,26 @@ const create = async (req, res, next) => {
   }
 };
 
+const update = async (req, res, next) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const { id } = req.params;
+
+    if (!title || !author || !pageQuantity) {
+      return res.status(400).json({ message: 'Invalid data' });
+    }
+
+    const book = await BookService.update(id, { title, author, pageQuantity });
+
+    res.status(200).json({message: 'book updated successfully'});
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAll,
   getById,
   create,
+  update,
 };
