@@ -3,6 +3,7 @@ const UserModel = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     pageQuantity: DataTypes.INTEGER,
+    publisher: DataTypes.STRING,
   });
 
   return Book;

@@ -1,7 +1,8 @@
+const Sequelize = require('sequelize');
 const { Book } = require('../models');
 
-const getAll = async () => {
-  const books = await Book.findAll();
+const getAll = async (author) => {
+  const books = await Book.findAll({ order: [['title', 'ASC']], });
 
   return books;
 }
@@ -15,27 +16,42 @@ const getById = async (id) => {
 }
 
 const create = async (obj) => {
-  const { title, author, pageQuantity } = obj;
+  const { title, author, pageQuantity, publisher } = obj;
 
-  const book = await Book.create({ title, author, pageQuantity });
+  const book = await Book.create({ title, author, pageQuantity, publisher });
 
   return book;
 }
 
 const update = async (id, obj) => {
-  const { title, author, pageQuantity } = obj;
+  const { title, author, pageQuantity, publisher } = obj;
 
-  const book = await Book.update(
-    { title, author, pageQuantity },
+  const [bookId] = await Book.update(
+    { title, author, pageQuantity, publisher },
+    { where: { id } },
+  );
+
+  return bookId;
+}
+
+const exclude = async (id) => {
+  const book = await Book.destroy(
     { where: { id } },
   );
 
   return book;
 }
 
-const exclude = async (id) => {
-  const book = await Book.destroy(
-    { where: { id } },
+const getByAuthor = async (author) => {
+  const book = await Book.findAll(
+    { 
+      where: {
+        author: {
+          [Sequelize.Op.like]: `%${author}%`,
+        },
+      },
+      order: [['title', 'ASC']],
+    },
   );
 
   return book;
@@ -47,4 +63,5 @@ module.exports = {
   create,
   update,
   exclude,
+  getByAuthor,
 };

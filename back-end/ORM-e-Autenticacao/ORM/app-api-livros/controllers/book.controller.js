@@ -1,10 +1,21 @@
 const BookService = require('../services/book.service');
 
 const getAll = async (req, res, next) => {
+  const { author } = req.query;
+  if (author) {
+    try {
+      const books = await BookService.getByAuthor(author);
+
+      return res.status(200).json(books);
+    }
+    catch (error) {
+      next(error);
+    }
+  }
   try {
     const books = await BookService.getAll();
 
-    res.status(200).json(books);
+    return res.status(200).json(books);
   } catch (error) {
     next(error);
   }
@@ -26,13 +37,13 @@ const getById = async (req, res, next) => {
 
 const create = async (req, res, next) => {
   try {
-    const { title, author, pageQuantity } = req.body;
+    const { title, author, pageQuantity, publisher } = req.body;
     
-    if (!title || !author || !pageQuantity) {
+    if (!title || !author || !pageQuantity || !publisher) {
       return res.status(400).json({ message: 'Invalid data' });
     }
 
-    const book = await BookService.create({ title, author, pageQuantity });
+    const book = await BookService.create({ title, author, pageQuantity, publisher });
 
     res.status(201).json(book);
   } catch (error) {
@@ -42,14 +53,14 @@ const create = async (req, res, next) => {
 
 const update = async (req, res, next) => {
   try {
-    const { title, author, pageQuantity } = req.body;
+    const { title, author, pageQuantity, publisher } = req.body;
     const { id } = req.params;
 
-    if (!title || !author || !pageQuantity) {
+    if (!title || !author || !pageQuantity || !publisher) {
       return res.status(400).json({ message: 'Invalid data' });
     }
 
-    const book = await BookService.update(id, { title, author, pageQuantity });
+    await BookService.update(id, { title, author, pageQuantity, publisher });
 
     res.status(200).json({message: 'book updated successfully'});
   } catch (error) {
@@ -68,7 +79,6 @@ const exclude = async (req, res, next) => {
     next(error);
   }
 };
-
 
 module.exports = {
   getAll,
