@@ -33,10 +33,18 @@ const update = async (id, obj) => {
   return book;
 }
 
+const exclude = async (id) => {
+  const book = await Book.destroy(
+    { where: { id } },
+  );
+
+  return book;
+}
 
 module.exports = {
   getAll,
   getById,
   create,
   update,
+  exclude,
 };
