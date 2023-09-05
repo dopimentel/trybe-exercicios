@@ -1,10 +1,8 @@
 const UserModel = (sequelize, DataTypes) => {
-  const User = sequelize.define('Book', {
-    type: DataTypes.STRING,
+  const Book = sequelize.define('Book', {
+    title: DataTypes.STRING,
     author: DataTypes.STRING,
     pageQuantity: DataTypes.STRING,
-    createAt: DataTypes.DATE,
-    updateAt: DataTypes.DATE,
   });
 
   return Book;
