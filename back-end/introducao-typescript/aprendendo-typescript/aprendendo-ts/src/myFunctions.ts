@@ -1,6 +1,6 @@
 import { User } from './types/User';
 
-export const getUserNames = (userList: User[]): string[] => userList.map((user: User) => user.name);
+export const getUserNames = (userList: User[]): string[] => userList.map((user) => user.name);
 
 export const getUsersByRepoQuantity = (users: User[], repos: number): string[] => users
   .filter((user) => user.repositories >= repos).map((user) => user.name);

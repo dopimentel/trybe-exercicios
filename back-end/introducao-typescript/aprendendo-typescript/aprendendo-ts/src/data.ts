@@ -19,6 +19,12 @@ const users: User[] = [
     profileURL: 'https://github.com/barraponto',
     repositories: 340,
   },
+  {
+    id: 4,
+    name: 'Marcos',
+    profileURL: 'https://github.com/dopimentel',
+    repositories: 50,
+  },
 ];
 
 export default users;
