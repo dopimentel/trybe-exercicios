@@ -57,4 +57,16 @@ class Student {
 
     this._assignmentsGrades = value;
   }
+
+  sumGrades(): number {
+    return [...this._examsGrades, ...this._assignmentsGrades]
+      .reduce((acc, cur) => acc + cur, 0);
+  }
+  sumAverageGrade(): number {
+    const sumGrades = this.sumGrades();
+    const totalNotes = this._examsGrades.length + this._assignmentsGrades.length;
+    return Math.round(sumGrades / totalNotes);
+
+  }
+
 }
