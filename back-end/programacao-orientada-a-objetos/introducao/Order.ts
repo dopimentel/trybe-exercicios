@@ -46,4 +46,11 @@ export default class Order {
     }
     this._discount = value;
   }
+  getTotal(): number {
+    return this._items
+      .reduce((acc, cur) => acc + cur.getPrice(), 0)
+  }
+  getTotalWithDiscount(): number {
+    return this.getTotal() * (1 - this._discount);
+  }
 }
