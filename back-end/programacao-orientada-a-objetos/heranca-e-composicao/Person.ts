@@ -13,14 +13,16 @@ export default class Person {
   }
   
   setName(name: string): void {
+    this.validateName(name);
     this.name = name;
   }
   setBirthDate(birthDate: Date): void {
+    this.validateBirthDate(birthDate);
     this.birthDate = birthDate;
   }
 
   private validateName(name: string): void {
-    if (name || name.length < 3) {
+    if (name.length < 3) {
       throw new Error('Invalid name!');
     }
   }
@@ -31,7 +33,7 @@ export default class Person {
     }
     const yearMs = 31_536_000_000; 
     const now = new Date();
-    const age = Math.abs((now.getTime() - date.getTime()) / yearMs);
+    const age = Math.abs(Math.floor((now.getTime() - date.getTime()) / yearMs));
     if (age > 120) {
       throw new Error('Invalid birth date!');
     }
@@ -44,9 +46,9 @@ export default class Person {
 }
 
 
-const person = new Person('John Doe', new Date('1990-01-01'));
-console.log(person.getName());
-console.log(person.getBirthDate());
-// person.setBirthDate(new Date('1790-01-01'));
-const yearMs = 31_536_000_000; 
-console.log(yearMs, typeof yearMs);
+// const person = new Person('John Doe', new Date('1990-01-01'));
+// console.log(person.getName());
+// console.log(person.getBirthDate());
+// // person.setBirthDate(new Date('1790-01-01'));
+// const yearMs = 31_536_000_000; 
+// console.log(yearMs, typeof yearMs);
