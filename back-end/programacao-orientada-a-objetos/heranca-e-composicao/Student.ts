@@ -50,17 +50,17 @@ export default class Student extends Person {
   }
   private validateExamsGrade(grades: number[]): void {
     if (grades.length > 4) {
-      throw new Error('Invalid grade! Must have 4 exams grades!');
+      throw new Error('Invalid grade! Must have maximum 4 exams grades!');
     }
   }
   private validateAssignmentsGrade(grades: number[]): void {
     if (grades.length > 2) {
-      throw new Error('Invalid grade! Must have 2 assignments grades!');
+      throw new Error('Invalid grade! Must have maximum 2 assignments grades!');
     }
   }
   private validateEnrollment(enrollment: string): void {
     if (enrollment.length !== 16) {
-      throw new Error('Invalid enrollment. Must have 16 characters!');
+      throw new Error('Invalid enrollment. Must have at least 16 characters!');
     }
   }
   validateGrades(): void {
