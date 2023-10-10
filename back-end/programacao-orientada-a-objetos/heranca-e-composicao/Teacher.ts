@@ -40,13 +40,13 @@ export default class Teacher extends Person implements Employee {
   getSubject(): Subject {
     return this._subject;
   }
-  get registration(): string {
+  getRegistration(): string {
     return this._registration;
   }
-  get salary(): number {
+  getSalary(): number {
     return this._salary;
   }
-  get admissionDate(): Date {
+  getAdmissionDate(): Date {
     return this._admissionDate;
   }
   setSubject(subject: Subject): void {
