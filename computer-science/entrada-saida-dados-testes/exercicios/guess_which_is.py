@@ -4,21 +4,22 @@ import random
 
 def guess_which_is(pokemons):
     random_pokemon = random.choice(pokemons["results"])["name"].lower()
-    print(f"O pokémon é {random_pokemon}.")
-    index = 0
     gap = " _ "
-    while index < len(random_pokemon):
-        guess = input("Guess which is the pokémon: ").lower()
-        if guess == random_pokemon:
-            print("You got it!")
-            return
-        else:
-            print("Try again!")
-            print(
-                f"{random_pokemon[:index +1]}" +
-                f"{gap * ((len(random_pokemon) -1) - index)}"
-            )
-            index += 1
+    while True:
+        for i in range(len(random_pokemon)):
+            guess = input("Guess which is the pokémon: ").lower()
+            if guess == random_pokemon:
+                print("You got it!")
+                return
+            elif i == len(random_pokemon) - 1:
+                print(f"The pokémon was {random_pokemon}")
+                return
+            else:
+                print("Try again!")
+                print(
+                    f"{random_pokemon[:i +1]}" +
+                    f"{gap * ((len(random_pokemon) -1) - i)}"
+                )
 
 
 if __name__ == "__main__":
