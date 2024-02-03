@@ -1,0 +1,6 @@
+# BEGIN: Python project
+*.pyc
+__pycache__/
+.venv/
+.env
+# END: Python project
