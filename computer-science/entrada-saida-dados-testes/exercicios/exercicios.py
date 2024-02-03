@@ -102,3 +102,35 @@ def fizz_buzz(n):
         else:
             result.append(i)
     return result
+
+    # Email validation with TDD
+
+    # Devem seguir o formato nomeusuario@nomewebsite.extensao;
+
+    # O nome de usuário deve conter somente letras, dígitos,
+    #   traços e underscores (_);
+
+    # O nome de usuário deve iniciar com uma letra;
+
+    # O nome do website deve conter somente letras e dígitos;
+
+    # O tamanho máximo da extensão é de 3 caracteres.
+
+
+def validate_email(email):
+    """Validate email"""
+    name, domain = email.split("@")
+    if not name[0].isalpha():
+        raise ValueError("The username must start with a letter")
+    if not name.replace("-", "").replace("_", "").isalnum():
+        raise ValueError("""The username must contain only
+                        letters, digits,dashes and underscores""")
+    if not domain.replace(".", "").isalnum():
+        raise ValueError("The domain must contain only letters and digits")
+    dom, ext = domain.split(".")
+    if len(ext) != 3:
+        raise ValueError("The extension must contain only 3 characters")
+
+
+if __name__ == "__main__":
+    validate_email("marcos@email.com")
