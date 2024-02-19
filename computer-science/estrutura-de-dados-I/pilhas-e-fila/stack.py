@@ -28,6 +28,11 @@ class Stack:
     def clear(self):
         self._data.clear()
 
+    def min_value(self):
+        if self.is_empty():
+            return None
+        return min(self._data)
+
     def __str__(self):
         str_items = ""
         for i in range(self.size()):
@@ -40,7 +45,7 @@ class Stack:
 
 
 if __name__ == "__main__":
-    elements = ["Hamburguer", "Pizza", "Hot-dog", "Sushi"]
+    elements = [1, -10, 2, 3, 4, 5]
     content_stack = Stack()
 
     for elem in elements:
@@ -55,5 +60,7 @@ if __name__ == "__main__":
     print(content_stack.peek())
     print(content_stack.size())
 
-    print(content_stack.clear())
+    # print(content_stack.clear())
     print(content_stack.size())
+
+    print(content_stack.min_value())
