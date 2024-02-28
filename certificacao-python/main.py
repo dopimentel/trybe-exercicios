@@ -21,7 +21,7 @@ def generate_int_description(integer):
 
     description = f"{DIGITS_MAP.get(int(digits[0]))}"
     for digit in digits[1:]:
-        description += f" {DIGITS_MAP.get(digit)}"
+        description += f" {DIGITS_MAP.get(int(digit))}"
 
     return description
 
