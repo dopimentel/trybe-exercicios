@@ -97,7 +97,8 @@ print(retangle.perimeter())
 
 class MonthlyExpenses:
     def __init__(
-        self, internet: float, grocery: float, power: float, water: float, rent: float
+        self, internet: float, grocery: float, power: float,
+        water: float, rent: float
     ) -> None:
         self.internet = internet
         self.grocery = grocery
