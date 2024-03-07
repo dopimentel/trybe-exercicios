@@ -93,3 +93,41 @@ retangle = Retangle(10, 20)
 print(retangle)
 print(retangle.area())
 print(retangle.perimeter())
+
+
+class MonthlyExpenses:
+    def __init__(
+        self,
+        internet: float,
+        grocery: float,
+        power: float,
+        water: float,
+        rent: float
+    ) -> None:
+        self.internet = internet
+        self.grocery = grocery
+        self.power = power
+        self.water = water
+        self.__rent = rent
+
+    @property
+    def power(self) -> float:
+        return self._power
+
+    @power.setter
+    def power(self, value: float) -> None:
+        self._power = value
+
+    @property
+    def water(self) -> float:
+        return self._water
+
+    @water.setter
+    def water(self, value: float) -> None:
+        self._water = value
+
+
+monthly_expenses = MonthlyExpenses(100.00, 500.00, 200.00, 100.00, 1500.00)
+print(monthly_expenses.water)
+monthly_expenses.water = 150.00
+print(monthly_expenses.water)
