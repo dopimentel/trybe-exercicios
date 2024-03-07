@@ -97,12 +97,7 @@ print(retangle.perimeter())
 
 class MonthlyExpenses:
     def __init__(
-        self,
-        internet: float,
-        grocery: float,
-        power: float,
-        water: float,
-        rent: float
+        self, internet: float, grocery: float, power: float, water: float, rent: float
     ) -> None:
         self.internet = internet
         self.grocery = grocery
@@ -131,3 +126,46 @@ monthly_expenses = MonthlyExpenses(100.00, 500.00, 200.00, 100.00, 1500.00)
 print(monthly_expenses.water)
 monthly_expenses.water = 150.00
 print(monthly_expenses.water)
+
+
+class Product:
+    def __init__(self, name: str, price: float) -> None:
+        self._name = name
+        self._price = price
+
+    def get_description(self) -> str:
+        return f"Name: {self._name}\nPrice: {self._price}"
+
+    def get_price(self) -> float:
+        return self._price
+
+
+class Book(Product):
+    def __init__(self, name: str, price: float, author: str) -> None:
+        super().__init__(name, price)
+        self._author = author
+
+    def get_description(self) -> str:
+        return f"{super().get_description()}\nAuthor: {self._author}"
+
+
+class DVD(Product):
+    def __init__(self, name: str, price: float, direction: str) -> None:
+        super().__init__(name, price)
+        self._direction = direction
+
+    def get_description(self) -> str:
+        return f"{super().get_description()}\nDirection: {self._direction}"
+
+
+def print_details(product: Product) -> None:
+    print(product.get_description())
+
+
+products = [
+    Book("The Lord of the Rings", 39.90, "J.R.R. Tolkien"),
+    DVD("The Matrix", 29.90, "Wachowski"),
+]
+
+for product in products:
+    print_details(product)
