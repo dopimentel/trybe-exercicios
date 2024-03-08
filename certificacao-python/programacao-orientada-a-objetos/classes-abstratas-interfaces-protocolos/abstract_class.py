@@ -18,3 +18,24 @@ class Sub(Abst):
 
 z = Sub()
 z.example()
+
+
+class TestClass(ABC):
+    def __init__(self, name: str) -> None:
+        self._name = name
+
+    @property
+    @abstractmethod
+    def name(self) -> str:
+        return self._name
+
+
+class TestSubClass(TestClass):
+    @property
+    def name(self) -> str:
+        return super().name
+
+
+if __name__ == "__main__":
+    test = TestSubClass("Test")
+    print(test.name)
