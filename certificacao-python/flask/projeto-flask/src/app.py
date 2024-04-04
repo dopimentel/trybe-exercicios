@@ -1,30 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask
 from controllers.jokes_controller import jokes_controller
 from os import environ
 from waitress import serve
 
-import requests
-
 app = Flask(__name__)
 app.register_blueprint(jokes_controller, url_prefix="/jokes")
-
-
-def get_random_joke():
-    url = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags="
-    "nsfw,religious,political,racist,sexist"
-    response = requests.get(url)
-    if response.status_code == 200:
-        joke = response.json()
-        if joke["type"] == "single":
-            return joke["joke"]
-        else:
-            return joke["setup"] + "<br>" + joke["delivery"]
-    return "No jokes available. Try again."
-
-
-@app.route("/api/devjoke")
-def dev_joke():
-    return jsonify({"joke": get_random_joke()})
 
 
 # joke_list = [
